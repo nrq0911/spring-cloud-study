@@ -1,0 +1,29 @@
+server:
+  port: 9955
+spring:
+  application:
+    name: consul-server-1
+  cloud:
+    consul:
+      host: 192.168.199.156   #consul地址
+      port: 8500
+      enabled: true
+      discovery:
+        enabled: true
+        instance-id: tomcat1
+        service-name: tomcat
+        hostname: 192.168.199.156
+        port: ${server.port}
+        health-check-url: http://192.168.199.156:9955/health
+        health-check-interval: 10s
+        tags: dev
+
+#actuator的health接口是否需要安全保证
+endpoints:
+  health:
+    sensitive: false
+
+ #actuator是否需要安全保证
+management:
+  security:
+    enabled: true

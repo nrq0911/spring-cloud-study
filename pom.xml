@@ -17,6 +17,7 @@
 		<module>microservice-config-server</module>
 		<module>microservice-config-server-eureka</module>
 		<module>microservice-discovery-eureka</module>
+		<module>microservice-discovery-consul</module>
 	</modules>
 
 </project>
