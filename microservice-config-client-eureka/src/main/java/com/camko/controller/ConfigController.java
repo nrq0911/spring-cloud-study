@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigController {
 
-    private String test ="123";
+    @Value("${test}")
+    private String test;
 
     @GetMapping("/test")
     public String test(){
